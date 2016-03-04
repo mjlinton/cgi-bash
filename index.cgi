@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# To encode the binary file, run this command in the directory where it's lacated.
+# To encode the binary file, run this command in the directory where it's located.
 # 	$ compress < binary | uuencode -m binary.Z
 #
 function form_decoder { echo -n "${1}" | sed 's/^/[/ ; s/=/]="/g ; s/\&/" [/g ; s/$/"/ ; s/+/ /g ; s/%/\\\\x/g' | xargs -0 printf '%b' ; }
